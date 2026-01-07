@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable in JavaScript</title>
+</head>
+<body>
+    <h1> Variable in JavaScript </h1>
+    <button type="button" onclick="private_variable()">
+        This will call a private variable function
+    </button>
+    <script> 
+        let x=5;
+        let y=10;
+        y=10;
+        x=15;
+        console.log(x+y);
+        const z=20;
+        console.log(z);
+        let letThis="nagugutom na ako";
+        console.log(letThis);
+        var studentName="Cheese";
+        console.log(studentName);
+        function private_variable() {
+            let x= "This is a private variable";
+            console.log(x);
+        }
+        var $ = "This is valid";
+        let $$ = "This is also valid";
+        const $$$valid = "This is still valid";
+        console.log($);
+        console.log($$);
+        console.log($$$valid);
+        console.log("_x"); // Declaration without initialization
+        let declareVar; //Initialization
+        declareVar = "Now I have declared";
+        console.log(declareVar);
+        const price1 = 5;
+        const price2 = 3.49;
+        let total = price1 + price2;
+        console.log("Total Price: " + total);
+        autoVar = "This is an auto variable";
+        autoVar = "Changed value of auto global variable";
+        console.log(autoVar);
+        let num1 = 10;
+        let num2 = 20;
+        let num3 = 30;  
+        console.log(num1 + num2 + num3);
+        let text1 = "Hello, ";
+        let text2 = "world";
+        let text3 = "!";
+        console.log(text1 + text2 + text3);
+        let a = "a", b="b", c="c";
+        console.log(a + b + c);
+        let globalVar = "I am a global variable";
+        {
+            let localVar1 = "I am a local variable";
+            console.log(globalVar); // Accessible
+            console.log(localVar1);  // Accessible
+        }
+         {
+            let localVar1 = "I am another local variable";
+            console.log(globalVar); // Accessible
+            console.log(localVar1);  // Accessible
+        }
+
+        let reAssignLet = "Initial Value";
+        console.log(reAssignLet);
+        let reAssignLet2 = "Reassigned Value";
+        console.log(reAssignLet2);
+
+        var reDeclareVar = "First Declaration";
+        console.log(reDeclareVar);  
+        var reDeclareVar = "Re-declared Value";
+        console.log(reDeclareVar);
+
+        hoistedVar = "I am hoisted";
+        console.log(hoistedVar);
+        //let hoistedVar;
+
+        let numBig = 12345678901234567890;
+        console.log(numBig);
+        let numBigInt = 1234567890123456789012345678901234567890n;
+        console.log(numBigInt);
+        let numBigInt2 = BigInt("33333333333312345678901234567890");
+        console.log(numBigInt2);
+    </script>
+</body>
+</html>

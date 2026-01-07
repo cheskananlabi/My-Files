@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+
+        function pet (happiness, hunger, health) {
+            this.happiness = happiness;
+            this.hunger = hunger;
+            this.health = health;
+        }
+
+        console.log("Pet Objects Example");
+        const cat = new pet(80, 50, 100);
+        const dog = new pet(100, 30, 80);
+        console.log("cat", cat);
+        console.log("dog", dog);
+        console.log("-------------------");
+
+        cat.health = 20;
+        dog.health = 10;
+        console.log("Cat's health", cat);
+        console.log("Dog's health", dog);
+        cat.hunger = 15;
+        console.log("Cat's hunger", cat);
+        dog.hunger = 5;
+        console.log("Dog's hunger", dog);
+        cat.happiness = 90;
+        console.log("Cat's happiness", cat);
+        dog.happiness = 25;
+        console.log("Dog's happiness", dog);
+
+        console.log("-------------------");
+        console.log("Deleting Properties Example");
+        delete cat.hunger;
+        console.log("Cat after deleting hunger", cat);
+        delete dog.health;
+        console.log("Dog after deleting health", dog);
+
+        console.log("-------------------");
+        console.log("Nested Objects Example");
+        cat.stats = {
+            energy: 70,
+            age: 3
+        };
+
+        dog.stats = {
+            energy: 40,
+            age: 5
+        };
+
+        console.log(cat);
+        console.log(dog);
+
+        console.log("-------------------");
+        console.log("Updating Properties");
+        cat.stats.energy -= 20;
+        dog.stats.age += 1;
+
+        console.log("Updated cat stats", cat.stats);
+        console.log("Updated dog stats", dog.stats);
+
+    </script>
+</body>
+</html>

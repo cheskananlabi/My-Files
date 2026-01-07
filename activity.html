@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Individual Activity</title>
+    <link rel="stylesheet" href="activity.css">
+</head>
+<body>
+    <div class="container">
+        <h1> If Statement</h1>
+        <p>This page demonstrates simple conditional statements using JavaScript's <code>if statement</code>, 
+        <code>if...else statement</code>, and <code>else if statement</code>.</p>
+        <div class="subcontainer">
+            <section class="example">
+            <h2>Example — Testing Battery Percentage of Phone </h2>
+            <p>Enter your battery percentage and <strong>Check Percentage</strong>. The script uses an <code>if statement</code> 
+            to check if the percentage is low or high.</p>
+            <label for="batteryInput">Enter your percentage:</label>
+            <input id="batteryInput" type="number" placeholder="Please enter your percentage here!" />
+            <button id="checkPercent">Check Percentage</button>
+            <p class="result" id="checkResult" aria-live="polite"></p>
+            </section>  
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1>Switch </h1>
+        <p>This page demonstrates switch using JavaScript's <code>switch statement</code>.</p>
+        <div class="container">
+            <h1>Switch Activity Selector</h1>
+            <p>Select a category and see what activity you can do!</p>
+            <label for="activitySelect">Choose a weather:</label>
+            <select id="activitySelect">
+                <option value="sunny"> Sunny </option>
+                <option value="rainy">Rainy</option>
+                <option value="windy">Windy</option>
+                <option value="cloudy">Cloudy</option>
+                <option value="snowy">Snowy</option>
+            </select>
+
+            <button id="showActivity">Show Activity</button>
+
+            <p class="result" id="activityResult"></p>
+        </div>
+
+    </div>
+
+    <div class="container">
+            <h1> Loops Activity </h1>
+        <p>This page demonstrates Loops using JavaScript's <code>loop statements</code>.</p>
+
+        <div class="subcontainer">
+            <section class="example">
+                <h2>Example — Letters in a Word </h2>
+                <p>Enter a word here <strong>See how many letters there are in the word you gave </strong>. 
+                The script uses a <code>loop</code> to check how many letters are in your word.</p>
+
+                <label for="wordInput">Enter a word here:</label>
+                <input id="wordInput" type="text" placeholder="Please enter a letter here!" />
+
+                <button id="checkWord">Check Here</button>
+
+                <p class="result" id="wordResult" aria-live="polite"></p>
+            </section>
+        </div>
+    </div>
+
+    <script src="activity.js"></script>
+</body>
+</html>

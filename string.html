@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <label for="num1">First Number </label>
+    <input type="text" id="num1" name="num1" placeholder="Enter number here">
+
+    <label for="num2">Second Number </label>
+    <input type="text" id="num2" name="num2" placeholder="Enter number here">
+
+    <button id="addNumbers"> Add Numbers </button>
+
+    <p id="insert"></p>
+
+    <h4 id="ict"> </h4>
+    <p id="competence"> </p>
+    <button id="enrollment"> See Enrollment </button>
+
+    <script>
+        const num1 = document.getElementById("num1").value;
+        const num2 = document.getElementById("num2").value;
+        const addNumbers = document.getElementById("addNumbers");
+        const insert = document.getElementById("insert");
+        //let str = `Hello, ${name}! Welcome to the String Manipulation Page.`;
+        document.getElementById("insert").innerText = `First Number: ${num1} , Second Number: ${num2}`;
+
+        addNumbers.addEventListener("click", function() {
+            const firstnum = document.getElementById("num1").value;
+            const secondnum = document.getElementById("num2").value;
+            const sum = Number(firstnum) + Number(secondnum);
+            console.log(sum);
+            document.getElementById("insert").innerText = `Sum: ${sum}`;
+        });
+
+        let header = "Competence";
+        let tags = ["Nanlabi, Camacho, Carlon, Canete, Cabias"];
+
+        let html = `<h2>${header} </h2><ul>`;
+
+        for (const x of tags) {
+            html += `<li> ${x} </li>`;
+        }
+
+        html += `</ul>`;
+        document.getElementById("ict").innerHTML = html;
+        document.getElementById("competence").innerText = "Demonstrate an understanding of string manipulations using JavaScript.";
+        document.getElementById("enrollment").addEventListener("click", function() {
+            alert("You are successfully enrolled!");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Java Script</title>
+    <script src="myfirstjavascript.js"></script>
+    <script>
+        function change(p2) {
+            document.getElementById(p2).innerHTML = "The paragraph has been changed in the head!";
+        }
+        function alert2() {
+            window.alert("This is an alert from the head!");
+        }
+        function consoleLog2() {
+            console.log("This is a console log from the head!");
+        }
+    </script>
+</head>
+<body>
+    <h1>My First JavaScript Activity</h1>
+    <h4>This part is controlled by a javascript in the body of the html.</h4>
+    <p id="p1">
+        This paragraph will be changed by the button below.
+    </p>
+    <button type="button" onclick="change('p1')">
+        Click to change the paragraph above
+    </button>
+    <br> <hr>
+
+    <p id="p2">
+        This paragraph will also be changed by another javascript in the head of the html.
+    </p>
+    <button type="button" onclick="change('p2')">
+        Click to change the paragraph 2 above
+    </button>
+    <br><hr>
+
+    <p id="p3">
+        This paragraph will be changed by the first javascript function in the head when the button
+        below is clicked.
+    </p>
+    <button type="button" onclick="change('p3')">
+        Click to change the paragraph 3 above
+    </button>
+
+    <hr>
+    <h4>
+        This part will use the window alert of a JavaScript.
+    </h4>
+    <button type="button" onclick="alert1()">
+        Click me for a JavaScript alert 1
+    </button>
+    <button type="button" onclick="alert2()">
+        Click me for a JavaScript alert 2
+    </button>
+    <button type="button" onclick="alert3()">   
+        Click me for a JavaScript alert 3
+    </button>
+
+    <hr>
+     <h4>
+        This part will use console output of a JavaScript.
+    </h4>
+    <button type="button" onclick="console.log()">
+        Click me for a JavaScript console log 1
+    </button>
+    <button type="button" onclick="console.log()">
+        Click me for a JavaScript console log 2
+    </button>
+    <button type="button" onclick="console.log()">
+        Click me for a JavaScript console log 3
+    </button>
+
+
+    <script> 
+        function change(p1) {
+            document.getElementById(p1).innerHTML = "The paragraph has been changed!";
+        }
+
+        function alert1() {
+            alert("This is an alert from the body!");
+        }
+
+        function consoleLog1() {
+            console.log("This is a console log from the body!");
+        }
+    </script>
+</body>
+</html>

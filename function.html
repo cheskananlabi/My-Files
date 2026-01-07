@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in Javascript</title>
+</head>
+<body>
+
+    <style>
+    body {
+        background: linear-gradient(135deg, #c4b5fd, #f9a8d4);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px;
+        min-height: 100vh;
+        color: black;
+    }
+
+    .operation-box {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;  /* <-- This centers the div */
+    border-radius: 10px;
+    max-width: 350px;
+
+    border: 2px solid #d4d4d8;
+    transition: 0.3s ease;
+    }
+
+
+    .operation-box:hover {
+        border-color: #a855f7;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    /* Titles */
+    .operation-box h4 {
+        margin-top: 0;
+        color: #7e22ce;
+    }
+
+    /* Labels */
+    label {
+        display: block;
+        margin-top: 10px;
+        font-weight: 600;
+        color: #444;
+    }
+
+    /* Input styling */
+    input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+
+        /* Border + hover */
+        border: 2px solid #cfcfcf;
+        margin-top: 5px;
+        font-size: 14px;
+        transition: 0.25s;
+    }
+
+    input:focus {
+        border-color: #ec4899;
+        outline: none;
+    }
+
+    /* Button styling */
+    button {
+        margin-top: 15px;
+        padding: 10px 15px;
+        background: #a855f7;
+        color: white;
+        border: 2px solid #9333ea;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 15px;
+        width: 100%;
+        transition: 0.25s;
+    }
+
+    button:hover {
+        background: #9333ea;
+        border-color: #7e22ce;
+    }
+
+    /* Result text */
+    p.result {
+        margin-top: 15px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    </style>
+    
+    <h2>Function in Javascript</h2>
+
+    <div class="operation-box">
+        <h4>Addition</h4>
+        <label>First Number</label>
+        <input id="add1">
+
+        <label>Second Number</label>
+        <input id="add2">
+
+        <button id="addNumbers">Add</button>
+
+        <p id="add"> </p>
+    </div>
+    
+    <hr>
+
+    <div class="operation-box">
+        <h4>Subtraction</h4>
+        <label>First Number</label>
+        <input id="sub1">
+
+        <label>Second Number</label>
+        <input id="sub2">
+
+        <button id="subNumbers">Subtract</button>
+
+        <p id="sub"> </p>
+    </div>
+    
+    <hr>
+    
+    <div class="operation-box">
+        <h4>Multiplication</h4>
+        <label>First Number</label>
+        <input id="mul1">
+
+        <label>Second Number</label>
+        <input id="mul2">
+
+        <button id="mulNumbers">Multiply</button>
+
+        <p id="mul"> </p>
+    </div>
+    
+    <hr>
+
+    <div class="operation-box">
+        <h4>Division</h4>
+        <label>First Number</label>
+        <input id="div1">
+
+        <label>Second Number</label>
+        <input id="div2">
+
+        <button id="divNumbers">Divide</button>
+
+        <p id="div"> </p>
+    </div>
+    
+    <hr>
+
+    <script>
+        add = (a, b) => (a+b);
+        sub = (a, b) => (a-b);
+        mul = (a, b) => (a*b);
+        div = (a, b) => (a/b);
+
+        document.getElementById("addNumbers").onclick = () => {
+            let num1 = parseFloat(document.getElementById("add1").value);
+            let num2 = parseFloat(document.getElementById("add2").value);
+            let result = add(num1, num2);
+            document.getElementById("add").innerText = `Addition Result: ${result}`;
+        };
+
+        document.getElementById("subNumbers").onclick = () => {
+            let num1 = parseFloat(document.getElementById("sub1").value);
+            let num2 = parseFloat(document.getElementById("sub2").value);
+            let result = sub(num1, num2);
+            document.getElementById("sub").innerText = `Subtraction Result: ${result}`;
+        };
+
+        document.getElementById("mulNumbers").onclick = () => {
+            let num1 = parseFloat(document.getElementById("mul1").value);
+            let num2 = parseFloat(document.getElementById("mul2").value);
+            let result = mul(num1, num2);
+            document.getElementById("mul").innerText = `Multiplication Result: ${result}`;
+        };
+
+        document.getElementById("divNumbers").onclick = () => {
+            let num1 = parseFloat(document.getElementById("div1").value);
+            let num2 = parseFloat(document.getElementById("div2").value);
+            let result = div(num1, num2);
+            document.getElementById("div").innerText = `Division Result: ${result}`;
+        };
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    <script>
+
+    function hero (health, mana, stamina){
+        this.health = 100;
+        this.mana = 50;
+        this.stamina = 75;
+        this.details = function(){
+        return `Health: ${this.health}, 
+        Mana: ${this.mana}, 
+        Stamina: ${this.stamina}`;
+    }
+    this.attack = function(enemy){
+        enemy.health -= 20;
+        this.stamina -= 10;
+        return `After attack - 
+        Stamina: ${enemy.health}: Hero stamina: ${this.stamina}`;
+    }
+}
+
+    function weapon(damage, durability){
+        this.damage = 25;
+        this.durability = 100;
+    }
+    console.log("Creation of Heroes")
+    const Ixia = new hero();
+
+    const Cyclops = new hero();
+    console.log("Ixia:", Ixia);
+    console.log("Cyclops:", Cyclops);
+
+    console.log("Updating Hero Properties")
+    Ixia.health = 50;
+    console.log("Ixia's.health:", Ixia.health);
+    Cyclops.health = 10;
+    console.log("Cyclops's.health:", Cyclops.health);
+    Ixia.armor = 15;
+    console.log("Create new properties for heroes");
+    console.log("Ixia's.armor:", Ixia.armor);
+    Ixia.range = 5; 
+    console.log("Cyclops's.range:", Cyclops.range);
+    console.log("Deleting Hero Properties")
+    delete Ixia.mana;
+    console.log("Ixia after deleting stamina:", Ixia);
+    console.log("Creation nested objects");
+    console.log("Adding weapon to heroes");
+    const sword = new weapon();
+    const bow = new weapon();
+    Ixia.weapon = sword;
+    Cyclops.weapon = bow;
+    console.log("Ixia's weapon:", Ixia.weapon);
+    console.log("Cyclops's weapon:", Cyclops.weapon);
+    console.log("Hero Details Method");
+    console.log("Ixia details:", Ixia.details());
+    console.log("Cyclops details:", Cyclops.details());
+    
+    Ixia.rage = function(){
+        this.health = 20;
+        this.stamina = 10;
+        return `After rage - 
+        Health: ${this.health}, 
+        Stamina: ${this.stamina}`;
+    }
+    console.log("Ixia uses rage:", Ixia.rage());
+    console.log("Ixia Details", Ixia.details());
+    Cyclops.accuracy = 10;
+    Cyclops.headshot = function(){
+        this.accuracy += 2;
+        this.mana -= 15;
+        return `After headshot -
+        Accuracy: ${this.accuracy}, 
+        Mana: ${this.mana}`;
+    }
+    console.log("Cyclops uses headshot:", Cyclops.headshot());
+
+    </script>
+</body>
+</html>

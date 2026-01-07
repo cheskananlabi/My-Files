@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Value</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+    <script>
+        function f(x) {
+            return x;
+        }
+        alert(f(5));
+
+        function g(x) {
+            return x + 1;
+        }
+        console.log(g(3));
+
+        function areaSquare(side) {
+            return side * side;
+        }
+
+        let demo = document.getElementById("demo");
+        demo.textContent = "Area of square with side 4 is: " + areaSquare(4);
+
+        function BMI (weight, height) {
+            return weight / (height * height);
+        }
+        console.log("BMI is: " + BMI(70, 1.75));
+    </script>
+</body>
+</html>
