@@ -2,74 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Base Game</title>
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0">
+    <title>Mobile Geng Geng</title>
     <link rel="stylesheet" href="mgg.css">
+    <script src="mgg.js"></script>
 </head>
-
 <body>
+    <h1>Two-Player Text-Based Battle Game</h1>
+    <div id="player-input">
+        <input type="text" id="player1-name" placeholder=
+        "Enter Player 1 name" oninput="validateNames()">
+        <input type="text" id="player2-name" placeholder=
+        "Enter Player 2 name" oninput="validateNames()"><br>
+        <button id="start-game" onclick="startBattle()">Start Game</button>
+    </div> <br>
+    <div id="game-container">
+        <div class="player-container" id="player1">
+            <h2 id="player1-title">Player 1</h2>
+            <h3 id="player1-health">Health: 100</h3>
+            <div class="health-bar"><div id="player1-health-bar" 
+                class="health-bar-inner"></div></div>
+            <h3>Wins: <span id="player1-wins">0</span></h3>
 
-<h1>Two-Player Rock Paper Scissors Battle</h1>
 
-<div id="player-input">
-    <input type="text" id="player1-name" placeholder="Enter Player 1 name">
-    <input type="text" id="player2-name" placeholder="Enter Player 2 name"><br>
-    <button id="start-game">Start Game</button>
-</div>
-
-<br>
-
-<div class="game-container">
-
-    <!-- PLAYER 1 -->
-    <div class="player-container" id="player1">
-        <h2 id="player1-title">Player 1</h2>
-
-        <h3>Life</h3>
-        <div class="hearts" id="player1-hearts">❤️ ❤️ ❤️ ❤️ ❤️</div>
-
-        <div class="life-pie">
-            <div class="life-fill" id="player1-life-pie"></div>
+            <div class="weapon-choices" id="player1-weapon-choices">
+                <input type="hidden" id="player1-weapon" value="Sword">
+                <img src="hammer.jpg" alt="Hammer" class="weapon-img" onclick="selectWeapon(1,'Hammer', this)">
+                <img src="shotgun.jpg" alt="Shotgun" class="weapon-img" onclick="selectWeapon(1, 'Shotgun', this)">
+                <img src="wood.jpg" alt="Wooden Stick" class="weapon-img" onclick="selectWeapon(1, 'Wooden Stick', this)">
+            </div>
+            <button id="player1-attack" onclick="playerAttack(1)">
+                <img src="attack.jpg" alt="Attack" class="attack-icon">
+            </button>
         </div>
-
-        <h3>Wins: <span id="player1-wins">0</span></h3>
-
-        <div class="rps">
-            <img src="rock.jpg" onclick="selectWeapon(1,'rock')">
-            <img src="paper.jpg" onclick="selectWeapon(1,'paper')">
-            <img src="scissor.jpg" onclick="selectWeapon(1,'scissors')">
+        <div class="player-container" id="player2">
+            <h2 id="player2-title">Player 2</h2> 
+            <h3 id="player2-health">Health: 100</h3>                    
+            <div class="health-bar"><div id="player2-health-bar" 
+                class="health-bar-inner"></div></div>
+            <h3>Wins: <span id="player2-wins">0</span></h3>
+            <div class="weapon-choices" id="player2-weapon-choices">
+                <input type="hidden" id="player2-weapon" value="Sword">
+                <img src="hammer.jpg" alt="Hammer" class="weapon-img" onclick="selectWeapon(2, 'Hammer', this)">
+                <img src="shotgun.jpg" alt="Shotgun" class="weapon-img" onclick="selectWeapon(2, 'Shotgun', this)">
+                <img src="wood.jpg" alt="Wooden Stick" class="weapon-img" onclick="selectWeapon(2, 'Wooden Stick', this)">
+            </div>
+            <button id="player2-attack" onclick="playerAttack(2)">
+                <img src="attack.jpg" alt="Attack" class="attack-icon">
+            </button>
         </div>
-
-        <button onclick="playerAttack(1)" id="player1-attack">Attack</button>
     </div>
-
-    <!-- PLAYER 2 -->
-    <div class="player-container" id="player2">
-        <h2 id="player2-title">Player 2</h2>
-
-        <h3>Life</h3>
-        <div class="hearts" id="player2-hearts">❤️ ❤️ ❤️ ❤️ ❤️</div>
-
-        <div class="life-pie">
-            <div class="life-fill" id="player2-life-pie"></div>
-        </div>
-
-        <h3>Wins: <span id="player2-wins">0</span></h3>
-
-        <div class="rps">
-            <img src="rock.jpg" onclick="selectWeapon(2,'rock')">
-            <img src="paper.jpg" onclick="selectWeapon(2,'paper')">
-            <img src="scissor.jpg" onclick="selectWeapon(2,'scissors')">
-        </div>
-
-        <button onclick="playerAttack(2)" id="player2-attack">Attack</button>
-    </div>
-
-</div>
-
-<div id="game-log">
-    <h3>Game Log</h3>
-</div>
-
+    <div id="game-log"><h3>Game Log</h3></div>
 </body>
 </html>
